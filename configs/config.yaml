@@ -1,0 +1,52 @@
+emotions:
+  - happy
+  - angry
+  - sad
+  - neutral
+
+camera:
+  index: 0
+  width: 640
+  height: 480
+  fps: 30
+  detect_every_n_frames: 2
+
+audio:
+  sample_rate: 16000
+  channels: 1
+  block_ms: 30
+  window_sec: 1.5
+  hop_sec: 0.5
+
+face_recognition:
+  model: buffalo_sc
+  det_model: models/buffalo_sc/det_500m.onnx
+  rec_model: models/buffalo_sc/w600k_mbf.onnx
+  det_size: [320, 320]
+  det_thresh: 0.5
+  nms_thresh: 0.4
+  similarity_threshold: 0.35
+  provider: CPUExecutionProvider
+  db_path: data/face_gallery.db
+
+face_emotion:
+  backbone: hsemotion
+  model_name: enet_b0_8_best_vgaf
+  head_path: checkpoints/face_emotion_head.pkl
+
+speech_emotion:
+  model: iic/emotion2vec_plus_seed
+  hub: ms
+  head_path: checkpoints/speech_emotion_head.pkl
+
+fusion:
+  method: decision
+  weights:
+    face: 0.5
+    speech: 0.5
+  head_path: checkpoints/fusion_head.pkl
+
+paths:
+  data_dir: data
+  models_dir: models
+  checkpoints_dir: checkpoints
