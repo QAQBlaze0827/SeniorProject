@@ -82,5 +82,10 @@ python -m app.face_demo
 python scripts/test_face_emotion.py tests/data/t1.jpg
 ```
 
+## 文件
+
+- [TODO.md](TODO.md)：里程碑與待辦
+- [docs/datasets_tw.md](docs/datasets_tw.md)：台灣華語情緒資料集清單，含「語音/臉部準確度不對稱」的風險與緩解設計
+
 ## 進度
 待辦與里程碑請見 [TODO.md](TODO.md)。
