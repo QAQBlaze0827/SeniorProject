@@ -40,7 +40,7 @@ python -m app.main
 
 ## 人臉辨識（里程碑 2）
 
-先下載 ONNX 模型（SCRFD 偵測 + MobileFaceNet 辨識）：
+先下載 ONNX 模型（SCRFD 偵測 + MobileFaceNet 辨識 + HSEmotion 表情）：
 
 ```
 python scripts/download_models.py
@@ -71,6 +71,16 @@ python -m app.face_demo
 ```
 
 模型與資料集如需在另一台裝置執行，請在該裝置重新執行 `scripts/download_models.py`。
+
+## 人臉表情（里程碑 3）
+
+以 HSEmotion (EfficientNet-B0) ONNX 模型抽取表情特徵，輸出 8 類機率再映射為 4 類。
+
+驗證（對單張影像偵測人臉 + 抽 1280 維特徵 + 4 類機率）：
+
+```
+python scripts/test_face_emotion.py tests/data/t1.jpg
+```
 
 ## 進度
 待辦與里程碑請見 [TODO.md](TODO.md)。

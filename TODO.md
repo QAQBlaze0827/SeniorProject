@@ -17,7 +17,7 @@
 - [x] 撰寫 app/main.py 最小可跑範例
 - [x] 建立 venv (.venv) 並安裝核心套件 (numpy/opencv/sounddevice/PyYAML/scikit-learn)
 - [ ] 安裝系統音訊函式庫 libportaudio2 (需 sudo，使用者執行)
-- [ ] 安裝其餘套件 (torch/hsemotion/insightface/funasr) — 留待里程碑 2~4
+- [ ] 安裝其餘套件 (onnxruntime/onnx；表情辨識已改用 ONNX 版 HSEmotion，免 torch)
 - [ ] 驗證鏡頭與錄音可正常運作
 
 ## 里程碑 2：人臉身分
@@ -31,7 +31,7 @@
 - [ ] 即時身分比對與 FPS 量測 (app/face_demo.py，需在目標裝置執行)
 
 ## 里程碑 3：特徵抽取管線
-- [ ] HSEmotion 人臉表情特徵抽取
+- [x] HSEmotion 人臉表情特徵抽取 (face_emotion/extractor.py；ONNX，1280 維特徵 + 4 類機率)
 - [ ] emotion2vec+ 語音特徵抽取
 - [ ] 下載並篩選中文 4 類資料集 (RAF-DB, MAFW, CASIA, ESD, CSEMOTIONS)
 - [ ] 特徵存成 .npy (training/extract_features.py)

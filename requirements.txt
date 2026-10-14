@@ -7,11 +7,7 @@ joblib
 tqdm
 
 onnxruntime
-
-torch
-torchvision
-timm
-hsemotion
+onnx
 
 funasr
 modelscope

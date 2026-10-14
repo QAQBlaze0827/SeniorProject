@@ -32,6 +32,9 @@ face_recognition:
 face_emotion:
   backbone: hsemotion
   model_name: enet_b0_8_best_vgaf
+  onnx_model: models/hsemotion/enet_b0_8_best_vgaf.onnx
+  img_size: 224
+  provider: CPUExecutionProvider
   head_path: checkpoints/face_emotion_head.pkl
 
 speech_emotion:
